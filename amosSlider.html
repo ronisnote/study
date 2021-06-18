@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <title>Title</title>
+    <link rel="stylesheet" href="./amos/swiper-bundle.min.css"/>
+<!--    <script src="./amos/swiper.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+    <script src="./amos/jquery-1.6.2.min.js"></script>
+    <script src="./amos/jquery-1.7.1.min.js"></script>
+    <script src="./amos/jquery-2.2.0.min.js"></script>
+    <style>
+      .monthlyColor{ width:100%; padding-bottom: 10%;}
+      .monthlyColor h4{text-align: center; padding-bottom: 20px; font-size: 24px;}
+      .monthlyColor .swiperWrap{position: relative; width: 50%; padding: 0 5%; left: 20%;}
+      .monthlyColor .swiper-container{width: 100%;  height: 100%;}
+      .monthlyColor .swiper-wrapper.center{justify-content: center;}
+      .monthlyColor .swiper-slide{width: 100%; height: 100%; text-align:center; display:flex; align-items:center; justify-content:center; margin-right: 20px;}
+      .monthlyColor .swiper-slide:last-of-type{margin-right: 0;}
+      .monthlyColor .swiper-slide img{display: block; width: 100%;  height: 100%; object-fit: cover;}
+      .monthlyColor .swiper-pagination{display: none;}
+      .monthlyColor .swiper-pagination.show{display: block;}
+      .monthlyColor .swiper-pagination-bullet-active{background: red;}
+      .monthlyColor .arrow{display: none;}
+      .monthlyColor .arrow.webshow{display: block;}
+      .monthlyColor .arrow .swiper-button-next:after,.swiper-button-prev:after{position: absolute;
+          display: block;
+          top: 22px;
+          width: 12px;
+          height: 12px;
+          border-color: red;
+          margin: 0 auto;
+          content: '';}
+      .monthlyColor .arrow .swiper-button-prev{position: absolute;  width: 42px; height: 58px;}
+      .monthlyColor .arrow .swiper-button-prev:after{
+          left: 15px;
+          border-width: 1px 0 0 1px;
+          border-style: solid;
+          transform: rotate(-45deg);
+      }
+      .monthlyColor .arrow .swiper-button-next{position: absolute;  width: 42px; height: 58px;}
+      .monthlyColor .arrow .swiper-button-next:after{
+          right: 15px;
+          border-width: 1px 1px 0 0;
+          border-style: solid;
+          transform: rotate(45deg);
+      }
+      /*.monthlyColor .arrow .swiper-button-disabled{opacity: 0.5%;}*/
+
+
+      @media (max-width: 640px){
+          .monthlyColor .swiperWrap{position: relative; width: 50%; padding: 0; left: 50%; transform: translateX(-50%);}
+          .monthlyColor .swiper-wrapper.center{justify-content: normal;}
+          .monthlyColor .swiper-pagination{display: block; position: relative; top: 4px;}
+          .monthlyColor .swiper-pagination.hide{display: none;}
+          .monthlyColor .arrow.show {display: block;}
+          .monthlyColor .arrow .swiper-button-prev{left: 5px;}
+          .monthlyColor .arrow .swiper-button-next{right: 5px;}
+          .monthlyColor .arrow .swiper-button-prev:after{left: 0;}
+          .monthlyColor .arrow .swiper-button-next:after{right: 0;}
+      }
+    </style>
+</head>
+<body>
+    <div class="monthlyColor">
+        <h4> Monthly Color </h4>
+        <div class="swiperWrap">
+            <div class="swiper-container mySwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide" >
+                      <img src="http://www.amosprofessional.com/upload/20210615/2021061516237423637111.png" alt="">
+                  </div>
+                  <div class="swiper-slide">
+                      <img src="http://www.amosprofessional.com/upload/20210330/2021033016170877000421.jpg" alt="">
+                  </div>
+                  <div class="swiper-slide">
+                      <img src="http://www.amosprofessional.com/upload/20210330/2021033016170876176141.jpg" alt="">
+                  </div>
+                  <div class="swiper-slide">
+                      <img src="http://www.amosprofessional.com/upload/20210330/2021033016170875360791.jpg" alt="">
+                  </div>
+              </div>
+                  <div class="swiper-pagination"></div>
+            </div>
+            <div class="arrow">
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        <!-- Monthly Color swiper -->
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            // centerInsufficientSlides: false,
+            watchOverflow: false,
+            allowTouchMove : false,
+            lazy: {
+                loadPrevNext: true
+
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints : {
+                // 768:{
+                //     slidesPerView : 2,
+                //
+                // },
+                640: {
+                    slidesPerView : 1,
+                },
+            }
+        });
+
+
+        function arrowHide(){
+            var arrow = $(".monthlyColor .arrow");
+            arrow.css("display", "none");
+        }
+
+        function arrowBlock(){
+            var arrow = $(".monthlyColor .arrow");
+            arrow.css("display", "block");
+        }
+
+
+
+        var vn_screenx = window.innerWidth;
+        console.log(vn_screenx);
+
+        var slideLength = $('.swiper-slide').length;
+        console.log(slideLength);
+
+        if (slideLength < 2){
+            // 슬라이드가 1개
+            $(".swiper-wrapper").addClass("center");
+            $(".swiper-pagination").addClass("hide");
+
+        }else if(slideLength < 3){
+            // 슬라이드가 2개
+            $(".swiper-wrapper").addClass("center");
+            $(".arrow").addClass("show");
+
+        }else if(slideLength < 4){
+            // 슬라이드가 3개
+            $(".arrow").addClass("show");
+
+        }else if(slideLength >= 4) {
+            //슬라이드가 4개 이상
+            $(".arrow").addClass("show");
+            $(".arrow").addClass("webshow");
+        }
+
+
+
+
+    </script>
+
+</body>
+</html>

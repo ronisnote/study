@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>반복문 while for</title>
+</head>
+<body>
+    <script>
+        console.log("while문")
+        let num = 0;
+        while(num < 11){
+            console.log(num);
+            num++;
+        }
+
+
+        console.log("for문")
+        for(let i = 0; i < 11; i++){
+            console.log(i);
+        }
+
+
+        console.log("더하기");
+        let number = 0;
+        while(number < 10){
+            number += 1;
+            // number = number+1;
+        }
+        console.log(number);
+
+
+        console.log("중첩반복문")
+        for(var a = 0; a < 5; a++){
+            console.log("a값:" + a);
+            for(var b = 0; b <= a; b++){
+                console.log("b값:" + b);
+            }
+        }
+
+
+        // console.log("하나씩 증가하는 별")
+        // var star =  '';
+        // for(var a = 0; a < 5; a++){
+        //     console.log("a값:" + a);
+        //     for(var b = 0; b <= a; b++){
+        //         star += '*';
+        //         star = star +'*';
+        //         console.log("b값:" + b);
+        //     }
+        //     star +='\n';
+        //     star = star +'\n';
+        //     console.log(star);
+        // }
+        // console.log(star);
+    </script>
+</body>
+</html>

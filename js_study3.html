@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>날짜/시간</title>
+    <style>
+        /*reset*/
+        *{margin: 0; padding: 0;line-height: 1.8;}
+        ol,ul{list-style: none;}
+        table{border-collapse: collapse; border-spacing: 0;}
+
+
+        /*layout*/
+        .wrap{
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        .header{
+            text-align: center;
+            padding: 10%;
+        }
+
+        section{
+            padding: 30px;
+            margin-bottom: 20px;
+            background:#f9ecd566;
+        }
+
+        section p:last-of-type{
+            font-weight: bold;
+            color:#c17844;
+        }
+
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="header">
+        <h1>
+            JavaScript - 현재 날짜, 시간 가져오기
+            <br>(년, 월, 일, 시, 분, 초 구하기)
+        </h1>
+    </div>
+    <div>
+        <h3>현재(now) 날짜, 시간 구하기 - new Date()</h3>
+        <p>2021년 7월 12일:  new Date("2021-07-12")</p>
+        <p class="now"></p>
+    </div>
+
+    <div>
+        <h3>연도 구하기 - getFullYear()</h3>
+        <p>new Date에서 getFullYear()로 연도만 가져온다.</p>
+        <p>var day = new Date().getFullYear();</p>
+        <p class="year"></p>
+    </div>
+
+    <div>
+        <h3>월 구하기 - getMonth()</h3>
+        <p>new Date에서 getMonth()로 월을 가져온다.</p>
+        <p>원래 월 -1 의 값으로 나온다.(즉, 1~12월이 0~11의 수로) 그래서 월을 구할때는 getMonth 값에 +1을 주어야함</p>
+        <p>var month = new Date().getMonth() + 1;</p>
+        <p class="month"></p>
+    </div>
+
+    <div>
+        <h3>일자 구하기 - getDate()</h3>
+        <p>new Date에서 getDate()로 일자를 가져온다</p>
+        <p>var date = new Date().getDate();</p>
+        <p class="date"></p>
+    </div>
+
+    <div>
+        <h3>요일 구하기 - getDay()</h3>
+        <p>new Date에서 getDay()로 요일을 가져온다.</p>
+        <p>var day = new Date().getDay();</p>
+        <p>일요일은 0, 월요일은 1, 화요일은 2, 수요일은 3, 목요일은 4, 금요일은 5, 토요일은 6 을 반환한다.</p>
+        <p class="day"></p>
+    </div>
+
+    <div>
+        <h3>분 구하기 - getMinute()</h3>
+        <p>new Date에서 getMinute()로 분을 가져온다.</p>
+        <p>var minute = new Date().getMinute();</p>
+        <p class="minute"></p>
+    </div>
+
+    <div>
+        <h3>초 구하기 - getSeconds()</h3>
+        <p>new Date에서 getSeconds()로 초을 가져온다.</p>
+        <p>var seconds = new Date().getSeconds();</p>
+        <p class="seconds"></p>
+    </div>
+</div>
+
+
+
+
+<script>
+    // 현재 날짜, 시간 구하기
+    var now = document.querySelector('.now');
+    now.textContent =  new Date();
+
+
+
+
+    var year = document.querySelector('.year');
+    year.textContent = new Date().getFullYear();
+
+    var month = document.querySelector('.month');
+    month.textContent = new Date().getMonth() + 1;
+
+    var date = document.querySelector('.date');
+    date.textContent = new Date().getDate();
+
+    var day = document.querySelector('.day');
+    day.textContent = new Date().getDay();
+
+    var minute = document.querySelector('.minute');
+    minute.textContent = new Date().getMinutes();
+
+    var seconds = document.querySelector('.seconds');
+    seconds.textContent = new Date().getSeconds();
+
+
+</script>
+</body>
+</html>

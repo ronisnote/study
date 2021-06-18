@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>객체 (Object)</title>
+    <style>
+        /*reset*/
+        *{margin: 0; padding: 0;line-height: 1.8;}
+        ol,ul{list-style: none;}
+        table{border-collapse: collapse; border-spacing: 0;}
+
+
+        /*layout*/
+        em{
+           text-decoration: underline;
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        img{
+            padding: 16px;
+        }
+
+        .wrap{
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        .header{
+            text-align: center;
+            padding: 10%;
+        }
+
+        section{
+            padding: 30px;
+            margin-bottom: 20px;
+            background:#f9ecd566;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="header">
+            <h1>
+                JavaScript -객체 (Object)
+            </h1>
+        </div>
+        <section>
+            <h3>객체 = 여러 개의 자료형을 한번에 저장하는 자료형</h3>
+            <p>배열과 객체는 상당히 유사 (배열을 객체를 기반으로 만들었기때문에)</p>
+            <p>다른점은 <em>배열은 요소에 접근할 때 인덱스를 사용</em>하고 <em>객체는 속성에 접근할 때 키를 사용</em>합니다.</p>
+        </section>
+
+        <section>
+            <h3>객체의 선언</h3>
+            <img src="./images/object/img1.PNG" alt="">
+            <p>* print와 같이 객체의 속성중 <strong>자료형이 함수인 속성</strong>을 <em>메소드</em>라고 한다.</p>
+        </section>
+
+        <section>
+            <h3>객체를 반복문으로 불러오기</h3>
+            <p>for in 문</p>
+            <img src="./images/object/img2.PNG" alt="">
+        </section>
+
+        <section>
+            <h3>배열과 객체를 사용하여 여러 개의 데이터</h3>
+            <img src="./images/object/img3.PNG" alt="">
+        </section>
+
+        <section>
+            <h3>생성자 함수 = '객체를 만드는 함수'</h3>
+            <p>* 일반적인 함수와 구분하기 위해 생성자 함수는 대문자로 시작</p>
+            <p>함수를 생성하고 new 키워드를 사용하여 객체를 생성</p>
+            <img src="./images/object/img4.PNG" alt="">
+        </section>
+
+        <section>
+            <h3>프로토 타입을 이용한 메소드 생성 & 객체 배열</h3>
+            <p>생성자 함수로 만든 객체는 <em>프로토타입이라는 공간</em>에 메소드를 지정해서 모든 객체가 공유하도록 한다.</p>
+            <p>* 객체 지형적으로 구성한 객체 배열</p>
+            <img src="./images/object/img5.PNG" alt="">
+        </section>
+    </div>
+    <script>
+        // 객체의 선언
+        // let object = {
+        //     name: '바나나',
+        //     price: 1200,
+        //     amount: 250,
+        //     print: function () {
+        //         console.log(this.name + ' 의 가격은 ' + this.price + '원입니다.')
+        //     }
+        // };
+        //
+        // console.log(object);
+        // {name: "바나나", price: 1200, amount: 250, print: ƒ}
+
+        // console.log(object['name']);
+        // console.log(object.name);
+        // 바나나
+
+        // console.log(object.print);
+        // ƒ () {
+        //     console.log(this.name + ' 의 가격은 ' + this.price + '원입니다.')
+        // }
+
+
+        // for (let key in object) {
+        //     console.log(key, object[key]);
+        // }
+        // name 바나나
+        // price 1200
+        // amount 250
+        // print ƒ () {
+        //     console.log(this.name + ' 의 가격은 ' + this.price + '원입니다.')
+        // }
+
+
+
+
+
+        //객체와 배열
+        // let obj = [{
+        //     name: '바나나',
+        //     price: 1200,
+        //     print: function () {
+        //         console.log(this.name + '의 가격은 ' + this.price + '원입니다.')
+        //     }
+        // }, {
+        //     name: '사과',
+        //     price: 2000,
+        //     print: function () {
+        //         console.log(this.name + '의 가격은 ' + this.price + '원입니다.')
+        //     }
+        // }, {
+        //     name: '배',
+        //     price: 3000,
+        //     print: function () {
+        //         console.log(this.name + '의 가격은 ' + this.price + '원입니다.')
+        //     }
+        // }];
+        //
+        // for (let i of obj) {
+        //     i.print();
+        // }
+        // 바나나의 가격은 1200원입니다.
+        // 사과의 가격은 2000원입니다.
+        // 배의 가격은 3000원입니다.
+
+
+
+
+        // 생성자 함수
+       //  function Fruits(name,price){
+       //      this.name = name;
+       //      this.price = price;
+       //  }
+       //
+       //  // 프로토타입을 사용한 메소드 생성
+       //  Fruits.prototype.print = function (){
+       //      console.log(this.name + '의 가격은 ' + this.price + '원입니다.')
+       //  }
+       //
+       //  // 객체 배열
+       //  let fruits = [
+       //      new Fruits("수박",13000),
+       //      new Fruits("사과",1300),
+       //      new Fruits("레몬",5000)
+       //  ];
+       //
+       // for (let fruit of fruits){
+       //     fruit.print();
+       // }
+        // 수박의 가격은 13000원입니다.
+        // 사과의 가격은 1300원입니다.
+        // 레몬의 가격은 5000원입니다.
+
+
+    </script>
+
+
+
+
+</body>
+</html>

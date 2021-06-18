@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>중첩반복문-별만들기</title>
+</head>
+<body>
+    <script>
+
+        // console.log("중첩반복문")
+        // for(var a = 0; a < 5; a++){
+        //     console.log("a값:" + a);
+        //     for(var b = 0; b <= a; b++){
+        //         console.log("b값:" + b);
+        //     }
+        // }
+
+
+        // console.log("하나씩 증가하는 별")
+        // var star =  '';
+        // for(var a = 0; a < 5; a++){
+        //     for(var b = 0; b <= a; b++){
+        //         star = star +'*';
+        //     }
+        //     star = star +'\n';
+        //     // console.log(star);
+        // }
+        // console.log(star);
+
+        // console.log("하나씩 감소하는 별")
+        // var star =  '';
+        // for(var a = 5; a >= 0; a--){
+        //     for(var b = 0; b <= a; b++){
+        //         star = star +'*';
+        //     }
+        //     star = star +'\n';
+        // }
+        // console.log(star);
+
+        // console.log("홀수로 증가하는 별")
+        // var star =  '';
+        // for(var a = 0; a < 5; a++){
+        //     for(var c = 4; c > a; c--){
+        //         star = star +' ';
+        //     }
+        //     for(var b = 0; b <= (a * 2); b++){
+        //         star = star +'*';
+        //     }
+        //     star = star +'\n';
+        // }
+        // console.log(star);
+
+        // console.log("가운데 정렬 삼각형 별");
+        // var star = '';
+        // for (var i = 0; i < 5; i++) {
+        //     for (var j = 4; j > i; j--) {
+        //         star += ' ';
+        //     }
+        //     for (var k = 0; k <= (i * 2); k++) {
+        //         star += '*';
+        //     }
+        //     star += '\n';
+        // }
+        // console.log(star);
+
+        console.log("다이아몬드 별")
+        var star = '';
+        for (var i = 0; i < 9; i++) {
+            if (i < 5) {
+                for (var j = 4; j > i; j--) {
+                    star += ' ';
+                }
+                for (var k = 0; k <= i * 2; k++) {
+                    star += '*';
+                }
+                star += '\n';
+            } else {
+                for (var j = 4; j < i; j++) {
+                    star += ' ';
+                }
+                for (var k = 17; k > i * 2; k--) {
+                    star += '*';
+                }
+                star += '\n';
+            }
+        }
+        console.log(star);
+
+
+    </script>
+</body>
+</html>

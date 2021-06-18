@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>배열(array) APIs</title>
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <h1>
+        JavaScript - 배열
+      </h1>
+    </div>
+
+    <section>
+      <h3>Q1. make a string out of an array</h3>
+
+    </section>
+
+    <section>
+      <h3>Q2. make an array out of a string</h3>
+
+    </section>
+
+    <section>
+      <h3>Q3. make this array look like this: [5, 4, 3, 2, 1]</h3>
+
+    </section>
+  </div>
+
+  <script>
+    // Q1. make a string out of an array
+    const fruits = ['apple', 'banana', 'orange'];
+    console.log(fruits);
+    // 1번 방법
+    for (let i = 0; i<3; i++){
+      console.log(fruits[i]);
+    }
+    // 2번 방법
+    for (let fruit of fruits){
+      console.log(fruit);
+    }
+    // 3번방법
+    fruits.forEach(function(fruits,index,array) {
+      console.log(fruits, index, array);
+    })
+
+
+    // Q2. make an array out of a string
+    const animals = 'cat,dog,rabbit';
+
+    // Q3. make this array look like this: [5, 4, 3, 2, 1]
+    const array = [1, 2, 3, 4, 5];
+    array.splice(0,5,'5','4','3','2','1');
+    console.log(array);
+
+    // Q4. make new array without the first two elements
+    const array = [1, 2, 3, 4, 5];
+
+
+  </script>
+</body>
+</html>
