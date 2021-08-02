@@ -40,22 +40,23 @@
 
              */
             $(document).ready(function() {
-                var currentIndex = 1;
+                var currentIndex = 0;
                 var $banner = $(".banner");
 
                 /*
                 * 이미지는 images/logo_01.jpg부터 logo_08.jpg 까지 8개가 있습니다.
                 */
+                var imgList=["logo_01.jpg","logo_02.jpg","logo_03.jpg","logo_04.jpg","logo_05.jpg","logo_06.jpg","logo_07.jpg","logo_08.jpg"]
                 // 1초에 한번씩 함수 호출
 
                 setInterval(function() {
                     // 다음에 등장할 배너 인덱스 값 구하기
                     currentIndex++;
-                    if (currentIndex > 8)
-                        currentIndex = 1;
-
+                    if (currentIndex >= imgList.length)
+                        currentIndex = 0;
+                    console.log(currentIndex);
                     // 다음 이미지 이름 구하기
-                    var imgName = "logo_0" + currentIndex + ".jpg";
+                    var imgName = imgList[currentIndex];
                     // 다음 이미지 출력
                     $banner.attr("src", "./images/" + imgName);
                 }, 1000);

@@ -26,14 +26,41 @@
                 $clock = $("#clock");
 
                 // 시간 출력 함수 호출
-                clock();
+                setInterval(clock,500);
+                // clock();
 
             });
 
-            function clock() {
-                // 여기에 풀이를 입력해주세요.
-
+            function addZero(value){
+                if(value<10){
+                    value = "0"+value;
+                }
+                return value;
             }
+
+            function clock() {
+
+                //1.현재 시간과 날짜값을 가져와서 저장
+                var objDate = new Date();
+                console.log(objDate);
+
+                //2.objDate에서 현재 시간,분,초만 가져오기
+                var hours = addZero(objDate.getHours());
+                console.log(hours);
+
+                var minutes = addZero(objDate.getMinutes());
+                console.log(minutes);
+
+                var seconds = addZero(objDate.getSeconds());
+                console.log(seconds);
+
+                var time = hours+":"+minutes+":"+seconds;
+                $clock.text(time);
+            }
+
+
+
+
 
         </script>
 

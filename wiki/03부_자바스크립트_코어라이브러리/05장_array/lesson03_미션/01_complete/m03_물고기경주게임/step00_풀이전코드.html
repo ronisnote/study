@@ -52,21 +52,81 @@
              - 물고기가 골인 지점을 통과하면 몇 번째 물고기가 우승했는지 알려주고 게임을 종료시켜 주세요.
              */
 
-            var $fishs = null;
+            var $fishsList = null;
 
-            $(document).ready(function() {
-                $fishs = $(".fish");
+            //1. 함수에 사용할 요소 초기화
+            function init(){
+                $fishsList = $(".fish");
+            }
 
-                // 물고기 배열 하기
-                for (var i = 0; i < $fishs.length; i++) {
-                    var $fish = $fishs.eq(i);
+            //2. 물고기 위치 초기화 - 세로로 나란히 배열
+            function initFishPosition(){
+                for (var i = 0; i < $fishsList.length; i++) {
+                    var $fish = $fishsList.eq(i);
                     // 물고기 위치는 100부터 시작
                     $fish.css({
                         left : 0,
                         top : 100 + (i * 150)
                     })
                 }
+            }
+
+            //3.물고기가 움직이는 이벤트 등록 처리함수
+            function initEvent(){
+                $("#start").click(function(){
+                    startGame();
+                });
+            }
+
+            //4.물고기 게임 시작
+            function startGame(){
+                if(timerID=-1){
+                    timerID = setInterval(function () {
+                        updateFishPosition();
+                        displayFishPosition();
+                        checkFishGoal();
+                    }, 200)
+                }
+            }
+            //5.물고기 위치 움직이기
+            function updateFishPosition(){
+                for(var i =0; i<$fishList.length; i++){
+                    var $fish = $fishList.eq(i);
+                    var step = Math.ceil(Math.random()*30);
+                    var newLeft = $fish.position().left+step;
+
+                    $fish.css("left",newLeft);
+                }
+            }
+            //6.물고기 위치 정보 출력
+            function displayFishPosition(){
+                var info = "";
+                for (var i=0; i<$fishList.length;i++){
+                    var fish = $fishList.eq(i);
+                    info = info+"fish"+i+"="+$fish.position().left+"<br>";
+                }
+                $info.html(info);
+            }
+            //7.물고기가 골인했는지 확인
+            function checkFishGoal(){
+
+            }
+            //8.게임 종료
+            function endGame(){
+
+            }
+
+            $(document).ready(function() {
+
+                init();
+                initFishPosition();
+
+
+
+
             })
+
+
         </script>
 
     </head>

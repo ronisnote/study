@@ -43,7 +43,24 @@
             // 앞쪽 공백 문자를 제거하는 함수
             function ltrim(str) {
                 // 여기에 소스를 입력해주세요.
+                if(str.length<=0){
+                    return "";
+                }
 
+                var firstCh = str.charAt(0);
+                if(firstCh != "_"){
+                    return str;
+                }
+
+                for(var index= 0; index<str.length; index++){
+                    var ch = str.charAt(index);
+                    if(ch != "_"){
+                        break;
+                    }
+                }
+
+                var result = str.substr(index, str.length);
+                return result;
             }
 
         </script>

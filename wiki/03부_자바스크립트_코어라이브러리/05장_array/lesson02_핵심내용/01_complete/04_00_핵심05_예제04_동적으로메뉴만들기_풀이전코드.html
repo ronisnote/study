@@ -33,6 +33,12 @@
             var menuData = "menu1,menu2,menu3,menu4";
             // 여기에 풀이를 입력해주세요.
 
+            var menuItems = menuData.split(",");
+
+            for(var i =0; i<menuItems.length; i++){
+                var newMenu = "<li>"+menuItems[i]+"</li>";
+                $menu.append(newMenu);
+            }
         })
 
     </script>
