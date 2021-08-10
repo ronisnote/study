@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title></title>
+        <style>
+            body {
+                font-size: 11pt;
+            }
+
+            .header {
+                text-align: center;
+            }
+
+        </style>
+
+        <script src="../../libs/jquery-1.11.0.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                // 타겟 목록 구하기
+                var $targetList = $(".target");
+
+                // 클릭 이벤트 등록
+                $targetList.click(function() {
+
+                    var $target = $(this);
+
+                    // 이미지 상태 정보 변경
+                    var sw = !$target.data("sw");
+                    console.log(sw);
+                    $target.data("sw", sw);
+
+                    // sw가 true 일때는 #target의 src 속성 값을 ch2.png로
+                    // false 일때는 #target의 src 속성 값을 ch3.png로 변경
+                    if (sw == true)
+                        $target.attr("src", "ch2.png");
+                    else
+                        $target.attr("src", "ch1.png");
+                });
+            })
+        </script>
+
+    </head>
+
+    <body>
+        <div class="panel1">
+            <p>
+                테스트1
+            </p>
+            <img src="ch2.png" class="target" data-sw="true">
+        </div>
+
+        <div class="panel2">
+            <p>
+                테스트2
+            </p>
+            <img src="ch2.png" class="target" data-sw="true">
+        </div>
+
+        <div class="panel3">
+            <p>
+                테스트3
+            </p>
+            <img src="ch2.png" class="target" data-sw="true">
+        </div>
+    </body>
+
+</html>

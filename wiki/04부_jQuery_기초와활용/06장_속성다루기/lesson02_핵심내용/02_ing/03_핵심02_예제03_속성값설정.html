@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title></title>
+        <style>
+            body {
+                font-size: 11pt;
+            }
+
+            .header {
+                text-align: center;
+            }
+
+        </style>
+
+        <script src="../../libs/jquery-1.11.0.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var $target = $("#target");
+                var sw = true;
+                $target.click(function(){
+                	sw=!sw;
+                	console.log(sw);
+                	if(sw==true){
+                		$target.attr("src","ch2.png");
+                    }else{
+                		$target.attr("src","ch1.png");
+                    }
+                });
+            })
+        </script>
+
+    </head>
+
+    <body>
+        <img src="ch2.png" id="target">
+    </body>
+    <script>
+	    $(document).ready(function() {
+		    var $target = $("#target");
+		    var sw = true;
+		    $target.click(function(){
+			    sw=!sw;
+			    console.log(sw);
+			    if(sw==true){
+				    $target.attr("src","ch2.png");
+			    }else{
+				    $target.attr("src","ch1.png");
+			    }
+		    });
+	    })
+    </script>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title></title>
+        <style>
+            body {
+                font-size: 9pt;
+            }
+
+        </style>
+
+        <script src="../../libs/jquery-1.11.0.min.js"></script>
+        <script>
+            /*
+             예제02: 다음 문서에서 패널(.panel)에 설정된 사용자 속성을 모두 화면에 출력해주세요.
+
+             */
+            $(document).ready(function() {
+                var $panel = $("div.panel");
+
+                //data()메서드 활용 전체 정보 출력
+                console.log("1. data() = ", $panel.data());
+                //1. data() =  {img: "./wdn_logo.png", tel: "010-1234-5678", name: "웹동네"}
+
+                console.log("2. data(name) = " + $panel.data("name"));
+                //2. data(name) = 웹동네
+
+                console.log("3. attr(data-name) = " + $panel.attr("data-name"));
+                //3. attr(data-name) = 웹동네
+
+                console.log("4. data(temp-data) = " + $panel.data("temp-data"));
+                //4. data(temp-data) = undefined
+
+                console.log("5. attr(temp-data) = " + $panel.attr("temp-data") );
+	            // 5. attr(temp-data) = test1
+            })
+        </script>
+    </head>
+
+    <body>
+        <div class="panel" data-name="웹동네" data-tel="010-1234-5678" data-img="./wdn_logo.png" temp-data="test1">
+        </div>
+    </body>
+    <script>
+	    /*
+         예제02: 다음 문서에서 패널(.panel)에 설정된 사용자 속성을 모두 화면에 출력해주세요.
+
+         */
+	    $(document).ready(function() {
+		    var $panel = $("div.panel");
+
+		    //data()메서드 활용 전체 정보 출력
+		    console.log($panel.data());
+		    //1. data() =  {img: "./wdn_logo.png", tel: "010-1234-5678", name: "웹동네"}
+
+		    console.log("2. data(name) = " + $panel.data("name"));
+		    //2. data(name) = 웹동네
+
+		    console.log("3. attr(data-name) = " + $panel.attr("data-name"));
+		    //3. attr(data-name) = 웹동네
+
+		    console.log("4. data(temp-data) = " + $panel.data("temp-data"));
+		    //4. data(temp-data) = undefined
+
+		    console.log("5. attr(temp-data) = " + $panel.attr("temp-data") );
+		    // 5. attr(temp-data) = test1
+	    })
+    </script>
+
+</html>
