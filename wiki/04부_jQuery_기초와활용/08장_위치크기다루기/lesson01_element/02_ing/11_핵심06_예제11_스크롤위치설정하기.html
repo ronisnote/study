@@ -45,6 +45,27 @@
 
          */
         $(document).ready(function(){
+        	var $info = $("#info");
+            var $container = $("#container");
+            var scrollEnd  = $("img").width()-$container.width();
+
+
+            $("#btn").click(function(){
+            	var left = $container.scrollLeft();
+                // console.log(left);
+            	var timer =  setInterval(function(){
+            		left = left+20;
+            		$container.scrollLeft(left);
+            		$info.html("left = "+left+", scrollEnd = "+scrollEnd);
+
+            		if(left>=scrollEnd){
+            			clearInterval(timer);
+                    }
+                },100);
+
+
+            })
+
 
         })
     </script>

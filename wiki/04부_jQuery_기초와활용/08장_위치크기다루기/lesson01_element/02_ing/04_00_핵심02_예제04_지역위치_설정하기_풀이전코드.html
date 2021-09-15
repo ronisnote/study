@@ -70,10 +70,18 @@
      */
     $(document).ready(function() {
         $("#btnAlign").click(function(e) {
-            // 여기에 풀이를 입력해주세요.
-           
+            var startX = 0;
+            var startY = 0;
+
+            $(".fish").each(function(){
+            	$(this).css({
+                    left:startX,
+                    top:startY
+                });
+            	startX = startX+70;
+            	startY = startY+70;
+            })
         });
-        
     })
 </script>
 

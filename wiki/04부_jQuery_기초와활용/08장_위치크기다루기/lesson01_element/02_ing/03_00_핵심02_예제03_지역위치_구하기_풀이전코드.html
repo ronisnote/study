@@ -63,10 +63,16 @@
         /*
          예제03: 실행 화면처럼 클릭한 물고기의 지역 위치 값을 #info에 출력해 주세요.
          */
+        var $fish = null;
         $(document).ready(function() {
             // 여기에 풀이를 입력해주세요.
 
-
+            $(".fish").click(function(){
+            	var $left = $(this).position().left;
+            	var $top = $(this).position().top;
+            	var $clickThis = $(this).attr("id");
+            	$("#info").html("id="+$clickThis+", left="+$left+", top="+$top);
+            })
         })
     </script>
 

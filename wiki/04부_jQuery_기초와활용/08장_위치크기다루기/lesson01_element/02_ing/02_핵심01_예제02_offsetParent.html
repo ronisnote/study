@@ -50,9 +50,9 @@
          */
         $(document).ready(function(){
             // 부모 좌표 노드 구하기
-
+            var $parentNode = $("#child").offsetParent();
             // 부모의 id출력
-
+            console.log($parentNode.attr("id"));
         })
     </script>
 

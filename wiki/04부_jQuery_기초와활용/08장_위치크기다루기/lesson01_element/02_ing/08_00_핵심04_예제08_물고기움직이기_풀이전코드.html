@@ -52,7 +52,13 @@
         $(document).ready(function() {
             // #fish 찾기
             var $fish = $("#fish");
-            // 여기에 풀이를 입력해주세요.
+            var $fishWidth = $fish.outerWidth();
+            var parentWidth = $("#parent1").width();
+            var $fishMove = parentWidth-$fishWidth
+            console.log($fishMove);
+            $("#move").click(function(){
+            	$fish.css("left",$fishMove);
+            })
            
         })
     </script>

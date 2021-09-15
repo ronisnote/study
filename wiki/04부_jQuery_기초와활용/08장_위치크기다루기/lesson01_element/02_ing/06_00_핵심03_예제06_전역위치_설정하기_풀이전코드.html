@@ -49,7 +49,13 @@
             var $fish = $("#fish");
             // #parent1에 클릭 이벤트 등록
             $("#parent1").click(function(e){
+                var left = e.pageX;
+                var top = e.pageY;
 
+                $fish.offset({
+                    left:left,
+                    top:top
+                })
             });
         })
     </script>

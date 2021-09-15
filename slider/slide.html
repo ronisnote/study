@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>슬라이드</title>
+    <style>
+        *{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        img{
+            width: 300px;
+        }
+
+        .wrap{
+
+            margin-left: 20px;
+            margin-top: 30px;
+        }
+
+        .button{
+            background: green;
+            color: #eeeeee;
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .slideList{
+            position: relative;
+            left: 0;
+            top:0;
+            width: 300px;
+            height: 500px;
+            overflow: hidden;
+            border: 1px solid red;
+            box-sizing: border-box;
+        }
+
+        .slideList ul{
+            position: absolute;
+            left: 0;
+            top: 100px;
+            width: 900px;
+            height: 250px;
+            transition: all 0.3s ease 0.5s;
+        }
+
+        .slideList ul:after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .slideList ul li{
+            width: 300px;
+            height: 250px;
+            overflow: hidden;
+            float: left;
+
+        }
+
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+		var num = 1;
+		function slide(){
+			$(".slideList ul").css("left",(-300*num)+"px");
+			num++;
+			if(num>2){
+				num=0;
+			}
+		}
+
+		let interval = setInterval(slide,1000);
+
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="button">
+            <a href="">버튼</a>
+        </div>
+        <div class="slideList">
+            <ul>
+                <li>
+                    <img src="./image/img1.jpg" alt="강아지이미지1">
+                </li>
+                <li>
+                    <img src="./image/img2.jpg" alt="강아지이미지2">
+                </li>
+                <li>
+                    <img src="./image/img3.jpg" alt="강아지이미지3">
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+
+</html>

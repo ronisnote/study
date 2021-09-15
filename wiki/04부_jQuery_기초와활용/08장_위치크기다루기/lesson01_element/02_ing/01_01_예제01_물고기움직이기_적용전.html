@@ -45,7 +45,7 @@
         // 버튼에 이벤트 걸기.
         $("#move").click(function(){
             // 물고기 위치 값 구하기
-            var currentX = parseInt($fish.css("left"))+10;
+            var currentX = $fish.position().left+10;
             // 위치 값 설정하기
             $fish.css("left", currentX);     
         });
