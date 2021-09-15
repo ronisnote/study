@@ -33,23 +33,19 @@
 
          */
         $(document).ready(function() {
-
             var $output = $("#output");
             var count = 0;
-
-            setInterval(function() {
-                // 값 증가
-                count++;
-                // 값을 출력
-                $output.text(count);
+            var timer = 0;
+            timer = setInterval(function() {
+	            // 값 증가
+	            count++;
+	            // 값을 출력
+	            $output.text(count);
             }, 1000);
 
-
             $("#stop").click(function() {
-                // 여기에 풀이를 입력해주세요.
-
+                clearInterval(timer)
             });
-
         })
 
     </script>

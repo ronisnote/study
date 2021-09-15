@@ -27,11 +27,22 @@
         var count=0;
         var $info = null;
 
+
+
         $(document).ready(function() {
             $info = $("#info");
+	        appe(count);
+
+	        $(btnStart).click(function(){
+		        count++;
+		        appe(count);
+	        });
 
         });
 
+        function appe(count){
+	        $info.append("<p>"+count+" 안녕하세요. 환영합니다.</p>");
+        };
     </script>
 
 </head>	

@@ -32,9 +32,21 @@
             var $output = $("#output");
             var count = 0;
 
-            // 여기에 풀이를 입력해주세요.
+	       function timer(){
+	       	    count++;
+	       	    $output.text(count);
+           }
+           setInterval(timer,1000)
 
+	        setInterval(function(){
+		        count++;
+		        $output.text(count);
+	        },1000)
         })
+
+
+
+
 
     </script>
 </head>

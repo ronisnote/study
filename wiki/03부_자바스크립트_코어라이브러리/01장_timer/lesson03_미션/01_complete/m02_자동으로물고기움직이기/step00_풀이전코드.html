@@ -55,36 +55,43 @@
 		$(document).ready(function(){
 			//물고기 노드 구하기.
 			var $fish = $("#fish");
-
 			// 물고기가 한번에 움직일 거리
 			var step = 50;
+			var timer = 0;
 
 			$("#btnStart").click(function(){
-				// 다음 물고기 위치
-				var x = $fish.position().left+step;
+                start();
+			});
+			$("#btnStop").click(function(){
+				stop();
+			});
 
+			function start(){
+                timer = setInterval(moveFish,100);
+            }
+
+            function stop(){
+	            clearInterval(timer);
+            }
+
+
+			function moveFish(){
+				var x = $fish.position().left+step;
 				// 물고기 위치가 430을 넘는 경우, 물고기 이동방향을 뒤쪽으로 변경 해줌
 				if(x>=430){
-				x=430;
-				$fish.attr("src","fish2.png");
+					x=430;
+					$fish.attr("src","fish2.png");
 					step=-50;
 				}
-
 				// 물고기 위치가 50보다 작은 경우, 물고기 이동방향을 앞쪽으로 변경 해줌
 				if(x<50){
 					x=50;
 					$fish.attr("src","fish1.png");
 					step=50;
 				}
-			   // 물고기 위치 설정
+				// 물고기 위치 설정
 				$fish.css("left", x);
-
-			});
-
-			$("#btnStop").click(function(){
-
-
-			})
+			}
 		});
 
 	</script>

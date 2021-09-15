@@ -39,23 +39,36 @@
 
          */
         $(document).ready(function() {
-            var currentIndex = 1;
+
             var imgList1 = ["logo_01.jpg", "logo_02.jpg", "logo_03.jpg", "logo_04.jpg", "logo_05.jpg"];
             var imgList2 = ["logo_02.jpg", "logo_05.jpg", "logo_03.jpg", "logo_04.jpg", "logo_01.jpg"];
-            var $banner = $("#banner1");
 
+            // var $banner1 = $("#banner1")
+            // var $banner2 = $("#banner1")
+
+            changeBanner("#banner1",imgList1,1000);
+            changeBanner("#banner2",imgList2,3000);
+
+            function changeBanner(selector,imgList,speed){
+	            var currentIndex = 12;
+	            var $banner = $(selctor);
+	            setInterval(function() {
+		            // 다음에 등장할 배너 인덱스 값 구하기
+		            currentIndex++;
+		            if (currentIndex >= imgList.length)
+			            currentIndex = 0;
+
+		            // 다음 이미지 이름 구하기
+		            var imgName = imgList[currentIndex];
+		            // 다음 이미지 출력
+		            $banner.attr("src", "./images/" + imgName);
+	            }, speed)
+            }
+
+
+            Math.기능()
             // 1초에 한번씩 함수 호출
-            setInterval(function() {
-                // 다음에 등장할 배너 인덱스 값 구하기
-                currentIndex++;
-                if (currentIndex >= imgList1.length)
-                    currentIndex = 0;
 
-                // 다음 이미지 이름 구하기
-                var imgName = imgList1[currentIndex];
-                // 다음 이미지 출력
-                $banner.attr("src", "./images/" + imgName);
-            }, 1000)
         })
     </script>
 

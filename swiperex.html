@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+    <title>swiper 연습</title>
+    <link rel="stylesheet" href="source/swiper-bundle.min.css"/>
+    <script src="source/swiper.min.js"></script>
+    <script src="source/jquery-2.2.0.min.js"></script>
+    <style>
+        html,
+        body {
+            position: relative;
+            height: 100%;
+        }
+
+        body {
+            background: #eee;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrap{
+            width: 1000px;
+            height: 500px;
+            margin: 100px auto;
+        }
+
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+  <!-- Swiper -->
+  <div class="wrap">
+        <div class="swiper-container mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" style="background:url(./images/dogs/dog1.jpg) no-repeat 0 0 / contain"></div>
+                <div class="swiper-slide" style="background:url(./images/dogs/dog2.jpg) no-repeat 0 0 / contain"></div>
+                <div class="swiper-slide" style="background:url(./images/dogs/dog3.jpg) no-repeat 0 0 / contain"></div>
+                <div class="swiper-slide" style="background:url(./images/dogs/dog4.jpg) no-repeat 0 0 / 100%"></div>
+                <div class="swiper-slide" style="background:url(./images/dogs/dog5.jpg) no-repeat 0 0 / 100%"></div>
+                <div class="swiper-slide" style="background:url(./images/dogs/dog6.jpg) no-repeat 0 0 / 100%"></div>
+            </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+         </div>
+  </div>
+
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+      var swiper = new Swiper(".mySwiper", {
+          slidesPerView: 3,
+          spaceBetween: 30,
+          pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+          },
+	      navigation: {
+		      nextEl: ".swiper-button-next",
+		      prevEl: ".swiper-button-prev",
+	      },
+      });
+  </script>
+
+</body>
+</html>

@@ -38,8 +38,25 @@
         $(document).ready(function () {
             var count = 0;
             var $score = $("#score");
+            var playing = true;
+
 
             // 여기에 코드를 입력해주세요.
+            $("#fish").click(function(){
+                if(playing=true){
+                    count++;
+                    $($score).text(count);
+                }
+            });
+
+            setTimeout(function(){
+            	playing=false;
+            	alert("게임이 종료되었습니다.")
+            },5000);
+
+
+
+
 
         });
     </script>

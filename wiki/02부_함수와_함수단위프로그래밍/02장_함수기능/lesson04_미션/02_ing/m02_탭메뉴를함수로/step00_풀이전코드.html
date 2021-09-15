@@ -56,25 +56,42 @@
      두 번째 탭메뉴도 동작할 수 있게 만드는 것입니다.
      */
 
+    var $selectMenuItem =null;
     $(document).ready(function(){
         /* 첫 번째 탭메뉴 처리 */
         // 선택한 탭메뉴를 저장할 변수
-        var $selectMenuItem =null;
 
+        activeTab("#tabMenu1 li");
+        activeTab("#tabMenu2 li");
+	    // activeTab(tabMenu2);
         // 메뉴 항목에 클릭 이벤트 등록
-        $("#tabMenu1 li").click(function(){
-            // 기존 선택 메뉴 항목이 있으면 비선택 상태로 만들기
-            if($selectMenuItem!=null){
-                $selectMenuItem.removeClass("select");
-            }
-
-            // 클릭한 메뉴 항목을 신규 선택 메뉴 항목으로 저장
-            $selectMenuItem = $(this);
-            // 선택 상태로 만들기
-            $selectMenuItem.addClass("select");
-        })
+        // $("#tabMenu1 li").click(function(){
+        //     // 기존 선택 메뉴 항목이 있으면 비선택 상태로 만들기
+        //     if($selectMenuItem!=null){
+        //         $selectMenuItem.removeClass("select");
+        //     }
+        //
+        //     // 클릭한 메뉴 항목을 신규 선택 메뉴 항목으로 저장
+        //     $selectMenuItem = $(this);
+        //     // 선택 상태로 만들기
+        //     $selectMenuItem.addClass("select");
+        // })
     });
 
+    function activeTab(selector){
+
+	    $(selector).click(function(){
+		    // 기존 선택 메뉴 항목이 있으면 비선택 상태로 만들기
+		    if($selectMenuItem!=null){
+			    $selectMenuItem.removeClass("select");
+		    }
+
+		    // 클릭한 메뉴 항목을 신규 선택 메뉴 항목으로 저장
+		    $selectMenuItem = $(this);
+		    // 선택 상태로 만들기
+		    $selectMenuItem.addClass("select");
+	    })
+    }
 
 </script>
 

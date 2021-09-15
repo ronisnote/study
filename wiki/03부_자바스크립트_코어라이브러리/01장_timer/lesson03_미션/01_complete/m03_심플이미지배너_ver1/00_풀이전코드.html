@@ -36,6 +36,16 @@
 
                 // 여기에 풀이를 입력해주세요.
 
+                setInterval(function(){
+	                currentIndex++;
+	                if(currentIndex > imgList.length){
+		                currentIndex = 0;
+	                }
+
+	                var imgName = imgList[currentIndex];
+	                $banner.attr("src","./images/"+imgName);
+                },1000);
+
             })
         </script>
     </head>

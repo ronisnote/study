@@ -11,16 +11,30 @@
          콜백 함수를 이용해 분리해 주세요.
          */
         $(document).ready(function() {
-            checkCount();
+            checkCount(showMessage);
         });
 
-        function checkCount(){
-            var count=0;
-            $("#btnStart").click(function(){
-                count++;
-                if(count>=10)
-                    alert("완료되었습니다.");
-            })
+        // function checkCount(){
+        //     var count=0;
+        //     $("#btnStart").click(function(){
+        //         count++;
+        //         if(count>=10)
+        //             alert("완료되었습니다.");
+        //     })
+        // }
+
+
+        function showMessage(){
+	        alert("완료되었습니다.");
+        }
+
+        function checkCount(callback){
+	        var count=0;
+	        $("#btnStart").click(function(){
+		        count++;
+		        if(count>=10)
+			       callback();
+	        })
         }
 
 

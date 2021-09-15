@@ -35,17 +35,15 @@
 
                 // 여기에 풀이를 입력해주세요.
                 // 1초에 한번씩 함수 호출
-                setInterval(function() {
-                    // 다음에 등장할 배너 인덱스 값 구하기
-                    currentIndex++;
-                    if (currentIndex >= imgList.length)
-                        currentIndex = 0;
+	            setInterval(function(){
+		            currentIndex++;
+		            if(currentIndex > imgList.length){
+			            currentIndex = 0;
+		            }
 
-                    // 다음 이미지 이름 구하기
-                    var imgName = imgList[currentIndex];
-                    // 다음 이미지 출력
-                    $banner.attr("src", "./images/" + imgName);
-                }, 1000)
+		            var imgName = imgList[currentIndex];
+		            $banner.attr("src","./images/"+imgName);
+	            },1000);
             })
         </script>
     </head>
