@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title></title>
+        <style>
+            body {
+                font-size: 9pt;
+                font-family: "굴림";
+            }
+            div, p, ul, li {
+
+            }
+            ul.menu {
+                padding: 10px;
+                list-style: none;
+                border: 1px #000 solid;
+            }
+            ul.menu li {
+                border: 1px #eeeeee solid;
+                margin: 10px;
+            }
+
+            li.select {
+                background-color: #ccc;
+            }
+        </style>
+
+        <script type="text/javascript"  src=".././libs/jquery-1.11.0.min.js"></script>
+        <script>
+            var $menu = null;
+            var $menuName = null;
+            var $selectedItem = null;
+
+            function init(){
+	            $menu = $("ul.menu");
+	            $menuName = $("#menuName");
+            }
+
+            function initEvent1(){
+            	$("#add").click(function(){
+            		addMenu();
+                });
+            }
+
+            function addMenu(){
+                var menuName = $menuName.val();
+                var newMenu = "<li>"+menuName+"</li>";
+                if($selectedItem){
+                	$selectedItem.after(newMenu);
+                }else{
+	                $menu.append(newMenu);
+                }
+            }
+
+            // 라이브 방식 이벤트 등록 - 아직 존재하지 않았던 노드에 이벤트 등록
+            // 지금까지 이벤트 등록은 다음과 같이 on메서드에 두개의 매개변수 값을 넣어 호출했다.
+            // $대상.on("이벤트명",이벤트리스너(){});
+            // 이번에는 세개의 매개변수 값을 넣어 이벤트 리스너 등록한다.
+            // $menu.on("click","li",function(){});
+            // 즉, click 이벤트로 메뉴리스트가 동적으로 추가 또는 삭제될때 이벤트도 같이 동적으로 작동 할 수 있도록 한다.
+            // $대상.on("이벤트","대상자식노드",이벤트리스너(){});
+            // $대상의 자식노드중 대상자식노드에만 이벤트를 등록한다는 뜻으로 즉, 이벤트 리스너는 대상자식 노드에서 이벤트가 발생할 때만 실행한다.
+
+            function initEvent2(){
+            	$menu.on("click","li",function(){
+            		setSelectItem($(this));
+                })
+            }
+
+
+            function setSelectItem($item){
+            	$(".menu li").removeClass("select");
+            	$selectedItem = $item;
+            	$selectedItem.addClass("select");
+	            console.log($selectedItem);
+            }
+
+            function initEvent3(){
+            	$("#update").click(function(){
+            		updateMenuName();
+                });
+            }
+
+            function updateMenuName(){
+            	if($selectedItem){
+            		var menuName = $menuName.val();
+            		$selectedItem.html(menuName);
+                }
+            }
+
+            function initEvent4(){
+            	$("#remove").click(function(){
+            		removeMenuItem()
+                });
+            }
+
+            function removeMenuItem(){
+            	if($selectedItem){
+            		$selectedItem.remove();
+            		$selectedItem = null;
+                }else{
+            		alert("선택한 메뉴가 존재하지 않습니다.")
+                }
+            }
+
+            function initEvent5(){
+            	$("#up").click(function(){
+            		upSelectedItem();
+                })
+            }
+
+            function upSelectedItem(){
+            	if($selectedItem){
+            		var $prevItem = $selectedItem.prev();
+            		if($prevItem){
+            			$selectedItem.insertBefore($prevItem);
+                    }
+                }else{
+		            alert("선택한 메뉴가 존재하지 않습니다.")
+	            }
+            }
+
+            function initEvent6(){
+            	$("#down").click(function(){
+            		downSelectedItem();
+                });
+            }
+
+            function downSelectedItem(){
+            	if($selectedItem){
+            		var $nextItem = $selectedItem.next();
+            		if($nextItem){
+            			$selectedItem.insertAfter($nextItem);
+                    }
+                }else{
+            		alert("선택한 메뉴가 존재하지 않습니다.")
+                }
+            }
+
+
+            $(document).ready(function() {
+                init();
+                initEvent1();
+	            initEvent2();
+	            initEvent3();
+	            initEvent4();
+	            initEvent5();
+	            initEvent6();
+            });
+        </script>
+    </head>
+
+    <body>
+        <div>
+            <input type="text" id="menuName" />
+            <button id="add">추가</button>
+            <button id="update">수정</button>
+            <button id="remove">삭제</button>
+            <button id="up">UP</button>
+            <button id="down">DOWN</button>
+        </div>
+        <ul class="menu">
+            <li>원래 li1</li>
+            <li>원래 li2</li>
+            <li>원래 li3</li>
+        </ul>
+    </body>
+
+</html>

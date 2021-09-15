@@ -48,7 +48,44 @@ $(document).ready(function(){
 
 
 // 양쪽 공배 문자를 제거하는 함수
+function ltrim(str) {
+    if(str.length<=0){
+        return "";
+    }
+
+    if(str.charAt(0) != "_"){
+        return str;
+    }
+
+    for(var index=0; index<=str.length; index++){
+        if(str.charAt(index) !="_"){
+            break;
+        }
+    }
+    var result = str.slice(index,str.length);
+    return result;
+}
+
+function rtrim(str){
+    if(str.length<=0) {
+        return "";
+    }
+    if(str.charAt(str.length-1)!="_"){
+        return str;
+    }
+    for(var index=str.length-1; index>=0; index--){
+        if(str.charAt(index) !="_"){
+            break;
+        }
+    }
+    var result = str.slice(0,index+1);
+    return result;
+
+}
 function trim(str){
+    var result = ltrim(str);
+    result = rtrim(result);
+    return result;
 
 }
 

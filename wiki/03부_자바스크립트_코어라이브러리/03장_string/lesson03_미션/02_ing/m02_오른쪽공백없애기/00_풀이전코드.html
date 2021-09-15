@@ -40,17 +40,30 @@ $(document).ready(function(){
         // 입력 값 알아내기
        var value = $input.val(); 
        
-       var result = ltrim(value);
+       var result = rtrim(value);
        $output.html(value+" ==> "+result);
     })  
 });
 
 
 // 앞쪽 공백문자를 제거하는 함수 
-function ltrim(str){    
-    // 여기에 소스를 입력해주세요.
-    
+function rtrim(str){
+    if(str.length<=0) {
+        return "";
+    }
+    if(str.charAt(str.length-1)!="_"){
+        return str;
+    }
+    for(var index=str.length-1; index>=0; index--){
+        if(str.charAt(index) !="_"){
+            break;
+        }
+    }
+    var result = str.slice(0,index+1);
+    return result;
+
 }
+
 
 
 </script>

@@ -51,7 +51,26 @@ $(document).ready(function(){
 function rtrim(str){	
     // 여기에 소스를 입력해주세요.
 
+    if (str.length<=0){
+        return "";
+    }
+
+    if (str.charAt(str.length-1)!="_"){
+        return str;
+    }
+
+    for(var index = str.length-1; index >= 0; index--){
+        if(str.charAt(index)!="_"){
+            break;
+        }
+    }
+
+    console.log(index);
+    var result = str.slice(0,index);
+    return result;
 }
+
+
 
 
 </script>

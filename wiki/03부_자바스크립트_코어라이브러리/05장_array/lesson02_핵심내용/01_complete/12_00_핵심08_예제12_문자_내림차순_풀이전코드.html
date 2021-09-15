@@ -13,7 +13,10 @@
             var userNames=["영희","철수","미자","진수","딴동네"];
             console.log("실행 전 : "+ userNames.join(","));
 
-
+            userNames.sort(function(a,b){
+                return a-b;
+            })
+            console.log("실행 후 : "+ userNames.join(","));
         </script>
 
     </head>

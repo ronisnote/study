@@ -51,13 +51,14 @@
 
         // 배너
         function banner(selector, imgList, speed){
-            var currentIndex=1;
+
             var $banner = $(selector);
 
             // 1초에 한번씩 함수 호출
             setInterval(function(){
                 // 다음에 등장할 배너 인덱스 값 구하기
-                currentIndex++;
+				var currentIndex= Math.floor(Math.random()*imgList.length);
+				// currentIndex++;
                 if(currentIndex>=imgList.length)
                     currentIndex = 0;
 
