@@ -45,9 +45,15 @@
             var $info = $("#info");
             // #container 구하기
             var $container = $("#container");
-            // 여기에 풀이를 입력해주세요.
 
-           
+            $("#btn").click(function(){
+	            var $scrollLeft = $container.scrollLeft();
+	            var $scrollTop = $container.scrollTop();
+
+	            $info.html($scrollLeft+"그리고"+$scrollTop);
+            })
+
+
         })
     </script>
 

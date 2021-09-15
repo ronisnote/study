@@ -50,8 +50,32 @@
             var $info = $("#info");
             // #fish 찾기
             var $fish = $("#fish");
-            // 여기에 코드를 입력해주세요.
-         
+            // 기본크기
+            var basicWidth = $fish.width();
+            var basicHeight = $fish.height();
+            // 기본 크기 + 패딩
+            var basicPaddingWidth = $fish.innerWidth();
+	        var basicPaddingHeight = $fish.innerHeight();
+	        //기본 크기 + 패딩 + 보더
+            var borderWidth = $fish.outerWidth();
+	        var borderHeight = $fish.outerHeight();
+	        //모든 영역 포함
+	        var totalBorderWidth = $fish.outerWidth(true);
+	        var totalBorderHeight = $fish.outerHeight(true);
+            //지역 좌표
+            var left = $fish.position().left;
+            var top = $fish.position().top;
+            //전역 좌표
+            var $left = $fish.offset().left;
+	        var $top = $fish.offset().top;
+
+
+	        $info.html("기본 넓이는"+basicWidth+", 기본 높이는 "+basicHeight+
+                "<br>기본크기+padding 중에 넓이는 "+ basicPaddingWidth+ " 높이는 "+basicPaddingHeight+
+            "<br>그리고 기본크기 + padding + border 중 넓이는 "+borderWidth+" 높이는 "+ borderHeight+
+            "<br>그리고 모든 영역을 포함한 크기는 "+totalBorderWidth+" 높이는 "+ totalBorderHeight+
+            "<br> 지역좌표는" + left +"와"+ top+"이고 <br> 전역좌표는 "+$left+"와"+$top+"이다");
+
         };
     </script>
 
@@ -60,7 +84,7 @@
 <body>
 
     <div id="info">
-        (paddin=30px, border=20px, margin=50px)
+        (padding=30px, border=20px, margin=50px)
         <br>
     </div>
     <div id="parent1">
