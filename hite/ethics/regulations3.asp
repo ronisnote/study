@@ -22,7 +22,7 @@
 		<div class="content">
 			
 			<h1 class="tit"><img src="../images/ethics/regulations2/tit1.gif" alt="윤리실천규범" /></h1>
-			<div class="ethics_regulations2">
+			<div class="ethics_regulations3">
 				<ul>
 					<li class="pb30">
 						<p><img src="../images/ethics/regulations2/itm1.gif" alt="깨끗하고 신뢰받는 기업! 하이트진로의 다짐입니다." /></p>
@@ -33,18 +33,16 @@
 						</div>
 					</li>
 					<li class="pb25">
-						<div class="box" data-api="accordion" style="margin-top:20px; border-top: 2px solid #323232; border-bottom:1px solid #323232;">
+						<div class="box" data-api="accordion">
 						    <dl>
 						        <dt data-accordion="header">
-						            <a href="#"
-						            style="display: block; position:relative; padding: 20px 0 20px 90px; border-bottom: 1px solid #e6e5ea; background: url("/assets/images/common/arrow.png") no-repeat right center; background-position: right 30px center; color:#222; font-weight:300; font-size:22px; box-sizing: border-box; transition: border-color .4s ease, background-color .4s ease, color .4s ease;
-                                    outline: none;">
+						            <a href="#">
 						                <div>제1조 (적용대상 및 의무)</div>
                                     </a>
                                 </dt>
-						        <dd data-accordion="content" style="display: none; position: relative; padding: 40px 90px 50px; border-bottom: 1px solid #1f87ff; color: #787878; font-weight: 400; font-size: 15px; opacity: 0; transition: opacity .4s ease;">
+						        <dd data-accordion="content">
 						            <div>
-						                <span style="font-size: 15px!important;">- 본 규범의 적용대상은 회사 및 구성원입니다.</span>
+						                <span>- 본 규범의 적용대상은 회사 및 구성원입니다.</span>
 						                <br>
 						                <span>- 회사 및 구성원은 본 규범을 철저히 준수하여야 할 의무가 있습니다.</span>
                                     </div>
