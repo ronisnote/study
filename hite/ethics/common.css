@@ -301,6 +301,51 @@ ul.paging li {display:inline;margin:0 1px 3px 1px;font-size:12px;}
 					.content .ethics_regulations2 ul li .box p span {position:absolute;left:0px;color:#4195d3;}
 
 
+/*.content .ethics_regulations3 .boxTxt{padding: 30px 15px;background: #f4f7fc;border: 1px solid #dee5ef;}*/
+/*.content .ethics_regulations3 .boxTxt p{line-height: 21px;letter-spacing: -0.2px;}*/
+.content .ethics_regulations3 ul li .boxTxt {width:auto;height:auto;padding:25px 22px;border:1px solid #dfe5ed;background:#f4f7fb;}
+.content .ethics_regulations3 ul li .boxTxt p {/*padding-left:10px;text-indent:-7px;*/font-size:13px;line-height:21px;/*color:#7f7f7f;*/color:#666666;letter-spacing:-1px;}
+.content .ethics_regulations3 ul li .box {margin-top:20px; margin-bottom:50px;  border-top: 2px solid #424649;  letter-spacing: -0.2px;}
+.content .ethics_regulations3 ul li .box:nth-of-type(2){margin-top: 10px;}
+.content .ethics_regulations3 ul li .box.on{border-bottom:0;}
+.content .ethics_regulations3 ul li .box dl dt a{display: block; position:relative; padding: 20px 0 20px 70px; border-bottom: 2px solid #e6e5ea; background: url(/images/ethics/regulations2/arrow.png) no-repeat right 30px center;
+    box-sizing: border-box;transition: border-color .4s ease, background-color .4s ease, color .4s ease; outline: none;}
+.content .ethics_regulations3 ul li .box dl dt:last-of-type a{border-bottom: 2px solid #424649;}
+.content .ethics_regulations3 ul li .box dl dt a:before{position: absolute; top: 27px; left: 0;width: 46px;height: 1px;background: #222;content: "";transition: background-color .4s ease;}
+.content .ethics_regulations3 ul li .box dl dt a div{color:#222; font-size: 14px;}
+/*dt°¡ on*/
+.content .ethics_regulations3 ul li .box dl dt.on a{border-bottom: 2px solid #cfdffb; background: url(/images/ethics/regulations2/arrow_on.png) no-repeat right 30px center;}
+.content .ethics_regulations3 ul li .box dl dt.on a:before{background: #1e87ff;}
+.content .ethics_regulations3 ul li .box dl dt.on a div{color:#1e87ff;}
+
+.content .ethics_regulations3 ul li .box dl dd{ display: none; position: relative; padding: 20px 70px; border-bottom: 2px solid #e6e5ea; box-sizing: border-box; color: #666666;  opacity: 0; transition: opacity .4s ease;}
+.content .ethics_regulations3 ul li .box dl dd:last-of-type{border-bottom: 2px solid #424649;}
+.content .ethics_regulations3 ul li .box dl dd div{display:none; opacity: 0; /*transition: opacity 0.4s ease;*/}
+.content .ethics_regulations3 ul li .box dl dd div span{font-size: 12px; line-height: 21px; font-weight: 300; color:#222222;}
+.content .ethics_regulations3 ul li .box dl dd div p{line-height:21px;}
+.content .ethics_regulations3 ul li .box dl dd div p strong{font-size: 12px; line-height: 21px;}
+.content .ethics_regulations3 ul li .box dl dd table{width: 470px; border-spacing:0; margin-bottom: 30px; margin-top: 10px;}
+.content .ethics_regulations3 ul li .box dl dd table tr th{border-top: 1px solid #d6d6d6; border-right: 1px solid #d6d6d6; box-sizing: border-box; background: #f8f7f9; padding: 7px 0; text-align: center;}
+.content .ethics_regulations3 ul li .box dl dd table tr th:last-of-type {border-right: 0;}
+.content .ethics_regulations3 ul li .box dl dd table tr td{border-top: 1px solid #d6d6d6; border-right: 1px solid #d6d6d6; box-sizing: border-box; padding: 20px 15px;}
+.content .ethics_regulations3 ul li .box dl dd table tr td:nth-of-type(1){width: 90px; text-align: center;}
+.content .ethics_regulations3 ul li .box dl dd table tr td:nth-of-type(2){width: 210px;}
+.content .ethics_regulations3 ul li .box dl dd table tr td:last-of-type{width: 170px; border-right: 0;}
+.content .ethics_regulations3 ul li .box dl dd table tr:last-of-type td{border-bottom: 1px solid #d6d6d6;}
+.content .ethics_regulations3 ul li .box dl dd table span{font-size:12px; line-height: 18px;}
+
+/*dd°¡ on*/
+.content .ethics_regulations3 ul li .box dl dd.on{display: block;opacity: 1}
+.content .ethics_regulations3 ul li .box dl dd.on div{display:block; opacity: 1;}
+
+.content .ethics_regulations3 h4{font-size: 14px; line-height: 21px;}
+
+
+
+
+
+
+
 .content .community {position:relative;width:100%;height:auto;}
 	.content .community ul {width:100%;height:auto;}
 		.content .community ul li {width:100%;height:auto;}
