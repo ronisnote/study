@@ -84,7 +84,21 @@ jQuery(function($){
 
 	$("#family img").click(function(){
 		$("#family_on").slideToggle("fast");
-	}); 
+	});
+
+	$(".ethics_regulations3 dl dt").click(function(){
+		// $(".ethics_regulations2 dl dt").removeClass("on");
+		// $(".ethics_regulations2 dl dd").removeClass("on");
+		$(this).siblings("dt").removeClass("on");
+		$(this).next().siblings("dd").removeClass("on");
+		$(this).toggleClass("on");
+		$(this).next().toggleClass("on");
+		return false;
+	});
+
+	// $(".ethics_regulations2 dl dt").click(function(){
+	// 	$(this).parents(".box").toggleClass("on");
+	// });
 
 
 });
