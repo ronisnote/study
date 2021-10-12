@@ -4,6 +4,10 @@
     <file url="file://$PROJECT_DIR$/hite/ethics/common/css/common.css" charset="x-windows-949" />
     <file url="file://$PROJECT_DIR$/hite/ethics/common/css/common2.css" charset="x-windows-949" />
     <file url="file://$PROJECT_DIR$/hite/ethics/common/js/common.js" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/hite/ethics/in_top.asp" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/hite/ethics/leftMenu.asp" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/hite/ethics/list.asp" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/hite/ethics/paging.asp" charset="x-windows-949" />
     <file url="file://$PROJECT_DIR$/hite/ethics/regulations3.asp" charset="x-windows-949" />
   </component>
 </project>

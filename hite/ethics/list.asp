@@ -63,7 +63,7 @@
 	<div id="container">
 		<!--#include virtual="/include/globalMenu.asp"-->
 		<div class="location">
-			<a href="/index.asp">Home</a> &gt; <span>커뮤니티</span> &gt; <span>공지사항</span>
+			<a href="/index.asp">Home</a> &gt; <span>커뮤니티</span> &gt; <span>게시판</span>
 		</div>
 		
 		<!-- S : subpage content -->
